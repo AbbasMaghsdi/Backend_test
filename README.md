@@ -37,6 +37,7 @@ following_system/
 ├── static/
 
 │   └── swagger.json
+
 └── README.md
 ```
 
