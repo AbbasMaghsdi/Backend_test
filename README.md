@@ -21,13 +21,21 @@ The Following System API is a RESTful API that allows users to follow and unfoll
 
 ```
 following_system/
+
 ├── app.py
+
 ├── config.py
+
 ├── models.py
+
 ├── routes.py
+
 ├── requirements.txt
+
 ├── swagger_config.py
+
 ├── static/
+
 │   └── swagger.json
 └── README.md
 ```
