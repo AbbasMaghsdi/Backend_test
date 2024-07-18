@@ -1,0 +1,83 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Following System API",
+    "description": "API documentation for the Following System",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "schemes": ["http"],
+  "paths": {
+    "/api/follow": {
+      "post": {
+        "summary": "Follow a user",
+        "description": "Follow a user by providing follower_id and followed_id",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Follow details",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "follower_id": {
+                  "type": "integer"
+                },
+                "followed_id": {
+                  "type": "integer"
+                }
+              },
+              "required": ["follower_id", "followed_id"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully followed the user"
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/api/unfollow": {
+      "post": {
+        "summary": "Unfollow a user",
+        "description": "Unfollow a user by providing follower_id and followed_id",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Unfollow details",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "follower_id": {
+                  "type": "integer"
+                },
+                "followed_id": {
+                  "type": "integer"
+                }
+              },
+              "required": ["follower_id", "followed_id"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully unfollowed the user"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Follow relationship does not exist"
+          }
+        }
+      }
+    }
+  }
+}
